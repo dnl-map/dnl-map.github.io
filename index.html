@@ -24,7 +24,7 @@
 		<script>
 		  $(document).ready(function() {
 		    var backgroundImage = new Image()
-		    backgroundImage.src = 'dnl_map.png';
+		    backgroundImage.src = 'img/dnl_map.png';
 
 		    var lc = LC.init(
 		        document.getElementsByClassName('dnl')[0],
@@ -38,10 +38,6 @@
 		                font: "bold 12px Helvetica"
 		              })
 		          ]
-		          $('.controls.export [data-action=export-as-png]').click(function(e) {
-				      e.preventDefault();
-				      window.open(lc.getImage().toDataURL());
-				    })
 		        });
 		    // the background image is not included in the shape list that is
 		    // saved/loaded here

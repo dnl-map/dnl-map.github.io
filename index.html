@@ -2,11 +2,11 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>title</title>
+		<title>DnL Map</title>
 	</head>
 	<body>
 
-		<div class="literally backgrounds"></div>
+		<div class="dnl"></div>
 
 		<script>
 		  $(document).ready(function() {
@@ -14,7 +14,7 @@
 		    backgroundImage.src = 'dnl_map.png';
 
 		    var lc = LC.init(
-		        document.getElementsByClassName('literally backgrounds')[0],
+		        document.getElementsByClassName('dnl')[0],
 		        {
 		          backgroundShapes: [
 		            LC.createShape(
@@ -25,6 +25,10 @@
 		                font: "bold 12px Helvetica"
 		              })
 		          ]
+		          $('.controls.export [data-action=export-as-png]').click(function(e) {
+				      e.preventDefault();
+				      window.open(lc.getImage().toDataURL());
+				    })
 		        });
 		    // the background image is not included in the shape list that is
 		    // saved/loaded here

@@ -31,10 +31,12 @@
 			        {
 			          backgroundShapes: [
 			            LC.createShape(
-			              'Image', {x: 0, y: 0, image: backgroundImage, scale: 2})
+			              'Image', {x: 0, y: 0, image: backgroundImage, scale: 2}) 
+			          ]
+			          imageSize: [
+			          	{width: 200, height: null}
 			          ]
 			        });
-			    var lc = LC.init('dnl', {imageSize: {width: 200, height: null}});
 			    // the background image is not included in the shape list that is
 			    // saved/loaded here
 			    var localStorageKey = 'drawing-with-background'

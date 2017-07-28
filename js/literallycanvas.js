@@ -1660,7 +1660,7 @@ module.exports = {
 'use strict';
 
 module.exports = {
-  imageURLPrefix: 'lib/img',
+  imageURLPrefix: 'img',
   primaryColor: 'hsla(0, 0%, 0%, 1)',
   secondaryColor: 'hsla(0, 0%, 100%, 1)',
   backgroundColor: 'transparent',

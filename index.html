@@ -14,41 +14,41 @@
 	    <script src="js/literallycanvas.js"></script>
 	</head>
 	<body>
+		<div class="container">
+			<div class="dnl"></div>
 
-		<div class="container dnl"></div>
+			<form class="controls export">
+				<input type="submit" data-action="export-as-png" value="Export as PNG">
+			</form>
 
-		<form class="controls export">
-			<input type="submit" data-action="export-as-png" value="Export as PNG">
-		</form>
+			<script>
+			  $(document).ready(function() {
+			    var backgroundImage = new Image()
+			    backgroundImage.src = 'img/dnl_map.png';
 
-		<script>
-		  $(document).ready(function() {
-		    var backgroundImage = new Image()
-		    backgroundImage.src = 'img/dnl_map.png';
-
-		    var lc = LC.init(
-		        document.getElementsByClassName('dnl')[0],
-		        {
-		          backgroundShapes: [
-		            LC.createShape(
-		              'Image', {x: 20, y: 20, image: backgroundImage, scale: 2})
-		          ]
-		        });
-		    // the background image is not included in the shape list that is
-		    // saved/loaded here
-		    var localStorageKey = 'drawing-with-background'
-		    if (localStorage.getItem(localStorageKey)) {
-		      lc.loadSnapshotJSON(localStorage.getItem(localStorageKey));
-		    }
-		    lc.on('drawingChange', function() {
-		      localStorage.setItem(localStorageKey, lc.getSnapshotJSON());
-		    });
-		    $('.controls.export [data-action=export-as-png]').click(function(e) {
-		      e.preventDefault();
-		      window.open(lc.getImage().toDataURL());
-		    });
-		  });
-		</script>
-
+			    var lc = LC.init(
+			        document.getElementsByClassName('dnl')[0],
+			        {
+			          backgroundShapes: [
+			            LC.createShape(
+			              'Image', {x: 20, y: 20, image: backgroundImage, scale: 2})
+			          ]
+			        });
+			    // the background image is not included in the shape list that is
+			    // saved/loaded here
+			    var localStorageKey = 'drawing-with-background'
+			    if (localStorage.getItem(localStorageKey)) {
+			      lc.loadSnapshotJSON(localStorage.getItem(localStorageKey));
+			    }
+			    lc.on('drawingChange', function() {
+			      localStorage.setItem(localStorageKey, lc.getSnapshotJSON());
+			    });
+			    $('.controls.export [data-action=export-as-png]').click(function(e) {
+			      e.preventDefault();
+			      window.open(lc.getImage().toDataURL());
+			    });
+			  });
+			</script>
+		</div>
 	</body>
 </html>

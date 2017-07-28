@@ -16,9 +16,9 @@
 
 		<div class="dnl"></div>
 
-		<!--<form class="controls export">
+		<form class="controls export">
 			<input type="submit" data-action="export-as-png" value="Export as PNG">
-		</form>-->
+		</form>
 
 		<script>
 		  $(document).ready(function() {
@@ -46,6 +46,16 @@
 		    }
 		    lc.on('drawingChange', function() {
 		      localStorage.setItem(localStorageKey, lc.getSnapshotJSON());
+		    });
+		  });
+		</script>
+
+		<script>
+		  $(document).ready(function() {
+		    var lc = LC.init(document.getElementsByClassName('dnl')[0]);
+		    $('.controls.export [data-action=export-as-png]').click(function(e) {
+		      e.preventDefault();
+		      window.open(lc.getImage().toDataURL());
 		    });
 		  });
 		</script>

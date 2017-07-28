@@ -47,12 +47,6 @@
 		    lc.on('drawingChange', function() {
 		      localStorage.setItem(localStorageKey, lc.getSnapshotJSON());
 		    });
-		  });
-		</script>
-
-		<script>
-		  $(document).ready(function() {
-		    var lc = LC.init(document.getElementsByClassName('dnl')[0]);
 		    $('.controls.export [data-action=export-as-png]').click(function(e) {
 		      e.preventDefault();
 		      window.open(lc.getImage().toDataURL());

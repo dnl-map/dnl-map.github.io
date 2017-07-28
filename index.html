@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>DnL Map</title>
+		<meta charset="UTF-8">
+		<title>title</title>
 	</head>
 	<body>
-		<div id="canvasDiv"></div>
-		<!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
-		<script type="text/javascript" src="drawing-app.js"></script>
-		<script type="text/javascript">
-			drawingApp.init();
+
+		<div class="literally backgrounds"></div>
+
+		<script>
+		  $(document).ready(function() {
+		    var backgroundImage = new Image()
+		    backgroundImage.src = 'dnl_map.png';
+
+		    var lc = LC.init(
+		        document.getElementsByClassName('literally backgrounds')[0],
+		        {
+		          backgroundShapes: [
+		            LC.createShape(
+		              'Image', {x: 20, y: 20, image: backgroundImage, scale: 2}),
+		            LC.createShape(
+		              'Text', {
+		                x: 200, y: 200, text: "I am in the background",
+		                font: "bold 12px Helvetica"
+		              })
+		          ]
+		        });
+		    // the background image is not included in the shape list that is
+		    // saved/loaded here
+		    var localStorageKey = 'drawing-with-background'
+		    if (localStorage.getItem(localStorageKey)) {
+		      lc.loadSnapshotJSON(localStorage.getItem(localStorageKey));
+		    }
+		    lc.on('drawingChange', function() {
+		      localStorage.setItem(localStorageKey, lc.getSnapshotJSON());
+		    });
+		  });
 		</script>
+
 	</body>
 </html>

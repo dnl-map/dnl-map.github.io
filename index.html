@@ -65,41 +65,7 @@
 			</form>
 
 			<script>
-			  $(document).ready(function() {
-			      var backgroundImage = new Image()
-			      backgroundImage.src = 'img/dnl_map_1028.png';
-
-			      var lc = LC.init(
-			          document.getElementsByClassName('dnl')[0], {
-			              imageSize: {
-			                  width: 1028,
-			                  height: 1028
-			              },
-			              backgroundShapes: [
-			                  LC.createShape(
-			                      'Image', {
-			                          x: 0,
-			                          y: 0,
-			                          image: backgroundImage,
-			                          scale: 1
-			                      })
-			              ]
-			          });
-			      //lc.setImageSize(1028, 1028);
-			      // the background image is not included in the shape list that is
-			      // saved/loaded here
-			      //var localStorageKey = 'drawing-with-background'
-			      //if (localStorage.getItem(localStorageKey)) {
-			      //    lc.loadSnapshotJSON(localStorage.getItem(localStorageKey));
-			      //}
-			      //lc.on('drawingChange', function() {
-			      //    localStorage.setItem(localStorageKey, lc.getSnapshotJSON());
-			      //});
-			      $('.controls.export [data-action=export-as-png]').click(function(e) {
-			          e.preventDefault();
-			          window.open(lc.getImage().toDataURL());
-			      });
-			  });
+				var _0xdce2=["\x73\x72\x63","\x69\x6D\x67\x2F\x64\x6E\x6C\x5F\x6D\x61\x70\x5F\x31\x30\x32\x38\x2E\x70\x6E\x67","\x64\x6E\x6C","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x73\x42\x79\x43\x6C\x61\x73\x73\x4E\x61\x6D\x65","\x49\x6D\x61\x67\x65","\x63\x72\x65\x61\x74\x65\x53\x68\x61\x70\x65","\x69\x6E\x69\x74","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x74\x6F\x44\x61\x74\x61\x55\x52\x4C","\x67\x65\x74\x49\x6D\x61\x67\x65","\x6F\x70\x65\x6E","\x63\x6C\x69\x63\x6B","\x2E\x63\x6F\x6E\x74\x72\x6F\x6C\x73\x2E\x65\x78\x70\x6F\x72\x74\x20\x5B\x64\x61\x74\x61\x2D\x61\x63\x74\x69\x6F\x6E\x3D\x65\x78\x70\x6F\x72\x74\x2D\x61\x73\x2D\x70\x6E\x67\x5D","\x72\x65\x61\x64\x79"];$(document)[_0xdce2[13]](function(){var _0xe0cfx1= new Image();_0xe0cfx1[_0xdce2[0]]= _0xdce2[1];var _0xe0cfx2=LC[_0xdce2[6]](document[_0xdce2[3]](_0xdce2[2])[0],{imageSize:{width:1028,height:1028},backgroundShapes:[LC[_0xdce2[5]](_0xdce2[4],{x:0,y:0,image:_0xe0cfx1,scale:1})]});$(_0xdce2[12])[_0xdce2[11]](function(_0xe0cfx3){_0xe0cfx3[_0xdce2[7]]();window[_0xdce2[10]](_0xe0cfx2[_0xdce2[9]]()[_0xdce2[8]]())})})
 			</script>
 
 		</div>

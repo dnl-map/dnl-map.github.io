@@ -58,16 +58,16 @@
 			                      })
 			              ]
 			          });
-			      lc.setImageSize(1028, 1028);
+			      //lc.setImageSize(1028, 1028);
 			      // the background image is not included in the shape list that is
 			      // saved/loaded here
-			      var localStorageKey = 'drawing-with-background'
-			      if (localStorage.getItem(localStorageKey)) {
-			          lc.loadSnapshotJSON(localStorage.getItem(localStorageKey));
-			      }
-			      lc.on('drawingChange', function() {
-			          localStorage.setItem(localStorageKey, lc.getSnapshotJSON());
-			      });
+			      //var localStorageKey = 'drawing-with-background'
+			      //if (localStorage.getItem(localStorageKey)) {
+			      //    lc.loadSnapshotJSON(localStorage.getItem(localStorageKey));
+			      //}
+			      //lc.on('drawingChange', function() {
+			      //    localStorage.setItem(localStorageKey, lc.getSnapshotJSON());
+			      //});
 			      $('.controls.export [data-action=export-as-png]').click(function(e) {
 			          e.preventDefault();
 			          window.open(lc.getImage().toDataURL());
